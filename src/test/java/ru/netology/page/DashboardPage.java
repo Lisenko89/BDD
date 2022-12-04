@@ -30,11 +30,11 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public int getCardBalance(DataHelper.CardId cardId) {
+    public int getCardBalance(DataHelper.CardIdInfo cardId) {
         return extractBalance($("[data-test-id='" + cardId.getId() + "']").getText());
     }
 
-    public ReplenishmentPage transfer(DataHelper.CardId cardId) {
+    public ReplenishmentPage transfer(DataHelper.CardIdInfo cardId) {
         $("[data-test-id='" + cardId.getId() + "'] [data-test-id=action-deposit]").click();
         return new ReplenishmentPage();
     }
